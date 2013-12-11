@@ -24,14 +24,13 @@ class User(Base):
         city = Column(String(255), nullable=False)
         state = Column(String(255), nullable=False)
         pin = Column(Integer, nullable=False)
-	stdcode = Column(String(10), nullable=False)
         phone = Column(String(15), nullable=False)
         external_id = Column(String(255), nullable=False)##user id from keystone
 	enabled = Column(Boolean, default=False, nullable=False)
 
 	def __init__(self, user_name, first_name, last_name, email, country, 
 			country_code, company, address, city, state, pin, 
-			stdcode, phone, external_id, enabled=False):
+			phone, external_id, enabled=False):
 		"""
 		"""
 		self.id = uuid.uuid4().hex
@@ -46,7 +45,6 @@ class User(Base):
 		self.city = city
 		self.state = state
 		self.pin = pin
-		self.stdcode = stdcode
 		self.phone = phone
 		self.external_id = external_id
 		self.enabled = enabled

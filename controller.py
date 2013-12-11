@@ -21,7 +21,7 @@ def create_user(environ):
 				
 			dbuser = User(email, fields["first_name"], fields["last_name"], email, fields["country"], \
 				fields["country_code"], fields["company"], fields["address"], fields["city"], \
-				fields["state"], fields["pin"], fields["stdcode"], fields["phone"], user.id, enabled=user.enabled)	
+				fields["state"], fields["pin"], fields["phone"], user.id, enabled=user.enabled)	
 			DBSession.add(dbuser)
 			DBSession.commit()
 		else:
